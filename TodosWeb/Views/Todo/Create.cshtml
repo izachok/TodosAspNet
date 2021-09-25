@@ -1,0 +1,25 @@
+﻿@model TodosWeb.Models.Todo;
+
+@{
+    ViewData["Title"] = "Create Todo";
+}
+
+<h1 class="text-primary">Create</h1>
+
+<form method="post" asp-action="Create">
+    <div class="form-row p-3">
+        <label asp-for="Task">
+        </label>
+        <input type="text" asp-for="Task" class="form-control" />
+        <span asp-validation-for="Task" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Todo</button>
+    <a asp-controller="Todo" asp-action="Index" class="btn btn-dark">Back</a>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+

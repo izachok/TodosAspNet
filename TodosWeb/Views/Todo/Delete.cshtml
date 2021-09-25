@@ -1,0 +1,23 @@
+﻿@model TodosWeb.Models.Todo;
+
+@{
+    ViewData["Title"] = "Delete Todo";
+}
+
+<h1 class="text-primary">Delete</h1>
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden />
+    <div class="form-row p-3">
+        <label asp-for="Task"></label>
+        <input type="text" asp-for="Task" class="form-control" disabled />
+    </div>
+    <div class="form-row p-3">
+        <input type="checkbox" asp-for="IsCompleted" disabled class="mr-3" />
+        <label asp-for="IsCompleted"></label>
+    </div>
+
+    <button type="submit" class="btn btn-danger">Delete Todo</button>
+    <a asp-controller="Todo" asp-action="Index" class="btn btn-dark">Back</a>
+</form>
+
